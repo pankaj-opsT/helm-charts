@@ -11,10 +11,10 @@ spec:
 {{- end }}
   subnetSelectorTerms:
     - tags:
-        karpenter.sh/discovery: "{{ $.Values.clusterName }}"
+        karpenter.sh/discovery/{{ $.Values.clusterName }}: "{{ $.Values.clusterName }}"
   securityGroupSelectorTerms:
     - tags:
-        karpenter.sh/discovery: "{{ $.Values.clusterName }}"
+        karpenter.sh/discovery/{{ $.Values.clusterName }}: "{{ $.Values.clusterName }}"
   amiSelectorTerms:
     - id: "{{ .amiSelector.arm }}"
     - id: "{{ .amiSelector.amd }}"
